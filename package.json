@@ -1,0 +1,28 @@
+{
+  "version": "0.0.1",
+  "scripts": {
+    "install": "node-gyp rebuild"
+  },
+  "gypfile": true,
+  "name": "sd-notify",
+  "description": "extremely minimal wrapper around systemd's sd_notify",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roryrjb/sd-notify.git"
+  },
+  "keywords": [
+    "systemd",
+    "sd_notify",
+    "process"
+  ],
+  "author": "Rory Bradford <roryrjb@protonmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/roryrjb/sd-notify/issues"
+  },
+  "homepage": "https://github.com/roryrjb/sd-notify#readme",
+  "dependencies": {
+    "bindings": "^1.2.1"
+  }
+}
