@@ -2,6 +2,22 @@
 
 > Extremely minimal wrapper around [`sd_notify`](https://www.freedesktop.org/software/systemd/man/sd_notify.html)
 
+### Installation
+
+Firstly you need some __systemd__ development files, on __Ubuntu__ these can be installed via:
+
+```
+$ sudo apt install libsystemd-dev
+```
+
+...then using `npm` or `yarn`:
+
+```
+$ npm install --save sd-notify
+```
+
+_Please note that this has currently only been tested on Ubuntu 16.04._
+
 ### Usage
 
 __Example:__
