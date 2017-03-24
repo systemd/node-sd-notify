@@ -16,6 +16,12 @@ $ sudo apt install libsystemd-dev
 $ npm install --save sd-notify
 ```
 
+or:
+
+```
+$ yarn add sd-notify
+```
+
 _Please note that this has currently only been tested on Ubuntu 16.04._
 
 ### Usage
@@ -30,13 +36,13 @@ const notify = require('sd-notify')
 
 app.listen(PORT, () => {
   console.log('listening on port ' + PORT)
-  notify()
+  notify.ready()
 })
 ```
 
-Calling `notify()` will inform [__systemd__](https://www.freedesktop.org/software/systemd/man/systemd.service.html) that the process has started, when using `notify` type in a service definition file, eg:
+Calling `.ready()` will inform [__systemd__](https://www.freedesktop.org/software/systemd/man/systemd.service.html) that the process has started, when using `notify` type in a service definition file, eg:
 
-```
+```ini
 [Unit]
 Description=Simple notifying service
 

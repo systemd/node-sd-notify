@@ -1,16 +1,23 @@
+// Copyright (C) 2017, Rory Bradford <roryrjb@protonmail.com>
+// MIT License
+
 #include <node.h>
 #include <systemd/sd-daemon.h>
 
 #define READY "READY=1"
 
-using namespace v8;
+namespace notify {
 
-void Notify(const FunctionCallbackInfo<Value>& args) {
+void ready(const v8::FunctionCallbackInfo<v8::Value>& args) {
   sd_notify(0, READY);
 }
 
-void Init(Local<Object> exports, Local<Object> module) {
-  NODE_SET_METHOD(module, "exports", Notify);
+}
+
+void Init(v8::Local<v8::Object> exports) {
+  NODE_SET_METHOD(exports, "ready", notify::ready);
 }
 
 NODE_MODULE(addon, Init)
+
+
