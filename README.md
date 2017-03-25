@@ -1,5 +1,12 @@
 # sd-notify
 
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/roryrjb/sd-notify.svg)](https://greenkeeper.io/)
+[![NPM version][npm-image]][npm-url]
+[![Build status][travis-image]][travis-url]
+[![License][license-image]][license-url]
+[![Code style][standard-image]][standard-url]
+
 > Extremely minimal wrapper around [`sd_notify`](https://www.freedesktop.org/software/systemd/man/sd_notify.html)
 
 ### Installation
@@ -53,3 +60,12 @@ ExecStart=/usr/sbin/simple-notifying-service
 [Install]
 WantedBy=multi-user.target
 ```
+
+[npm-image]: https://img.shields.io/npm/v/sd-notify.svg
+[npm-url]: https://npmjs.org/package/sd-notify
+[travis-image]: https://img.shields.io/travis/roryrjb/sd-notify.svg
+[travis-url]: https://travis-ci.org/roryrjb/sd-notify
+[license-image]: http://img.shields.io/npm/l/sd-notify.svg
+[license-url]: LICENSE
+[standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
+[standard-url]: https://github.com/feross/standard
