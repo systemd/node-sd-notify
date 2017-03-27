@@ -2,7 +2,7 @@
 
 'use strict'
 
-const sdNotify = require('../')
+const sdNotify = require('../../')
 const express = require('express')
 
 const app = express()
