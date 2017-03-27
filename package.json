@@ -1,12 +1,12 @@
 {
-  "version": "2.1.0",
+  "version": "2.1.1",
   "scripts": {
     "test": "./node_modules/.bin/standard && ./node_modules/.bin/cc && ./node_modules/.bin/mocha",
     "install": "node-gyp rebuild"
   },
   "gypfile": true,
   "name": "sd-notify",
-  "description": "extremely minimal wrapper around systemd's sd_notify",
+  "description": "wrapper around sd_notify to help in using systemd as a node process manager",
   "main": "index.js",
   "repository": {
     "type": "git",
