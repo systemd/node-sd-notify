@@ -1,5 +1,5 @@
 {
-  "version": "2.1.1",
+  "version": "2.1.2",
   "scripts": {
     "test": "./node_modules/.bin/standard && ./node_modules/.bin/cc && ./node_modules/.bin/mocha",
     "install": "node-gyp rebuild"
@@ -17,7 +17,7 @@
     "sd_notify",
     "process"
   ],
-  "author": "Rory Bradford <roryrjb@protonmail.com>",
+  "author": "Rory Bradford <rory@dysfunctionalprogramming.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/roryrjb/sd-notify/issues"
@@ -30,5 +30,6 @@
     "cc": "^1.0.1",
     "mocha": "^3.2.0",
     "standard": "^9.0.2"
-  }
+  },
+  "os": ["linux"]
 }

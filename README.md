@@ -6,6 +6,10 @@
 
 > Extremely minimal wrapper around [`sd_notify`](https://www.freedesktop.org/software/systemd/man/sd_notify.html)
 
+### Requirements
+
+Any Linux distribution that supports [__systemd__](https://en.wikipedia.org/wiki/Systemd).
+
 ### Installation
 
 Firstly you need some __systemd__ development files, on __Ubuntu__ these can be installed via:
