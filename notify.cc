@@ -1,4 +1,4 @@
-// Copyright (C) 2017, Rory Bradford <roryrjb@protonmail.com>
+// Copyright (C) 2017, Rory Bradford <rory@dysfunctionalprogramming.com>
 // MIT License
 
 #include <node.h>
@@ -24,12 +24,25 @@ void watchdog(const v8::FunctionCallbackInfo<v8::Value>& args) {
   sd_notify(0, WATCHDOG);
 }
 
+void interval(const v8::FunctionCallbackInfo<v8::Value>& args) {
+  v8::Isolate* isolate = args.GetIsolate();
+  uint64_t interval;
+  int res = sd_watchdog_enabled(0, &interval);
+
+  if (res > 0) {
+      args.GetReturnValue().Set(v8::Number::New(isolate, interval / 1000));
+  } else {
+      args.GetReturnValue().Set(v8::Number::New(isolate, 0));
+  }
+}
+
 }  // namespace notify
 
 void Init(v8::Local<v8::Object> exports) {
   NODE_SET_METHOD(exports, "ready", notify::ready);
   NODE_SET_METHOD(exports, "stopping", notify::stopping);
   NODE_SET_METHOD(exports, "watchdog", notify::watchdog);
+  NODE_SET_METHOD(exports, "watchdogInterval", notify::interval);
 }
 
 NODE_MODULE(addon, Init)

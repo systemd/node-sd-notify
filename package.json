@@ -1,5 +1,5 @@
 {
-  "version": "2.1.2",
+  "version": "2.2.0",
   "scripts": {
     "test": "./node_modules/.bin/standard && ./node_modules/.bin/cc && ./node_modules/.bin/mocha",
     "install": "node-gyp rebuild"
@@ -15,7 +15,9 @@
   "keywords": [
     "systemd",
     "sd_notify",
-    "process"
+    "process",
+    "watchdog",
+    "forever"
   ],
   "author": "Rory Bradford <rory@dysfunctionalprogramming.com>",
   "license": "MIT",
@@ -31,5 +33,7 @@
     "mocha": "^3.2.0",
     "standard": "^9.0.2"
   },
-  "os": ["linux"]
+  "os": [
+    "linux"
+  ]
 }

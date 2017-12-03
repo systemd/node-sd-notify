@@ -8,7 +8,8 @@
 
 ### Requirements
 
-Any Linux distribution that supports [__systemd__](https://en.wikipedia.org/wiki/Systemd).
+* any Linux distribution that supports [__systemd__](https://en.wikipedia.org/wiki/Systemd)
+* C/C++ tool stack (GCC, etc...)
 
 ### Installation
 
@@ -18,19 +19,11 @@ Firstly you need some __systemd__ development files, on __Ubuntu__ these can be 
 $ sudo apt install libsystemd-dev
 ```
 
-...then using `npm` or `yarn`:
+...then using `npm`:
 
 ```
 $ npm install --save sd-notify
 ```
-
-or:
-
-```
-$ yarn add sd-notify
-```
-
-_Please note that this has currently only been tested on Ubuntu 16.04._
 
 ### Usage
 
@@ -102,6 +95,27 @@ though this has a nice side effect, as if the process gets that busy, that block
 (and restart it with the `Restart=` config set); and in the context of having multiple processes being load
 balanced with Nginx (as an example) and across multiple machines, ensures that no one process is blocking
 for any significant amount of time.
+
+You can also check if the process was called by __systemd__ with Watchdog mode
+enabled, using `watchdogInterval()` which returns the amount of milliseconds
+watchdog has been set to, or `0` if it has not been set:
+
+```javascript
+app.listen(PORT, () => {
+  console.log('listening on port ' + PORT)
+  notify.ready()
+
+  const watchdogInterval = notify.watchdogInterval()
+
+  if (watchdogInterval > 0) {
+    const interval = Math.floor(watchdogInterval / 2)
+    notify.startWatchdogMode(interval)
+  }
+})
+```
+
+...this way the Node process will behaviour in the correct manner in either
+situation.
 
 [npm-image]: https://img.shields.io/npm/v/sd-notify.svg
 [npm-url]: https://npmjs.org/package/sd-notify

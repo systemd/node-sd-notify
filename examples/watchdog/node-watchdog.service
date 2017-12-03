@@ -4,7 +4,7 @@ Description=Express Node.js
 [Service]
 Environment="NODE_ENV=production"
 Type=notify
-ExecStart=/path/to/your/server.js
+ExecStart=/home/rory/.nvm/versions/node/v8.9.1/bin/node /home/rory/Projects/Personal/sd-notify/examples/watchdog/server.js
 KillMode=process
 WatchdogSec=3
 TimeoutStartSec=30
@@ -13,4 +13,3 @@ Restart=always
 
 [Install]
 WantedBy=multi-user.target
-
