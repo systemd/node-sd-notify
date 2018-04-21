@@ -19,5 +19,9 @@ module.exports = Object.assign({}, sdNotify, {
       clearInterval(watchdogTimer)
       watchdogTimer = null
     }
+  },
+
+  sendStatus: (text) => {
+    sdNotify.sendState('STATUS=' + text)
   }
 })

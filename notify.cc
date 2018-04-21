@@ -10,6 +10,10 @@
 
 namespace notify {
 
+const char* ToCString(const v8::String::Utf8Value& value) {
+  return *value ? *value : "STASUS=conversion failed";
+}
+
 void ready(const v8::FunctionCallbackInfo<v8::Value>& args) {
   int pid = args[0]->NumberValue();
   sd_pid_notify(pid, 0, READY);
@@ -22,6 +26,12 @@ void stopping(const v8::FunctionCallbackInfo<v8::Value>& args) {
 
 void watchdog(const v8::FunctionCallbackInfo<v8::Value>& args) {
   sd_notify(0, WATCHDOG);
+}
+
+void sendstate(const v8::FunctionCallbackInfo<v8::Value>& args) {
+  v8::String::Utf8Value str(args[0]);
+  const char *state = ToCString(str);
+  sd_notify(0, state);
 }
 
 void interval(const v8::FunctionCallbackInfo<v8::Value>& args) {
@@ -43,6 +53,7 @@ void Init(v8::Local<v8::Object> exports) {
   NODE_SET_METHOD(exports, "stopping", notify::stopping);
   NODE_SET_METHOD(exports, "watchdog", notify::watchdog);
   NODE_SET_METHOD(exports, "watchdogInterval", notify::interval);
+  NODE_SET_METHOD(exports, "sendState", notify::sendstate);
 }
 
 NODE_MODULE(addon, Init)
