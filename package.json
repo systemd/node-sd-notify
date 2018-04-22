@@ -1,7 +1,7 @@
 {
   "version": "2.2.0",
   "scripts": {
-    "test": "./node_modules/.bin/standard && ./node_modules/.bin/cc && ./node_modules/.bin/mocha",
+    "test": "./node_modules/.bin/standard && ./node_modules/.bin/mocha",
     "install": "node-gyp rebuild"
   },
   "gypfile": true,
@@ -29,7 +29,6 @@
     "bindings": "^1.2.1"
   },
   "devDependencies": {
-    "cc": "^1.0.1",
     "mocha": "^3.2.0",
     "standard": "^9.0.2"
   },
