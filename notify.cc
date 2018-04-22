@@ -11,7 +11,7 @@
 namespace notify {
 
 const char* ToCString(const v8::String::Utf8Value& value) {
-  return *value ? *value : "STASUS=conversion failed";
+  return *value ? *value : "STATUS=conversion failed";
 }
 
 void ready(const v8::FunctionCallbackInfo<v8::Value>& args) {
