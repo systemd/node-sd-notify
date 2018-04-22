@@ -117,6 +117,32 @@ app.listen(PORT, () => {
 ...this way the Node process will behaviour in the correct manner in either
 situation.
 
+__Status:__
+
+You can also send some status string to __systemd__, which will append to the service's log.
+
+```javascript
+const notify = require('sd-notify')
+
+// ...
+
+notify.sendStatus('send some status to systemd')
+
+// ...
+```
+
+...then, for example:
+
+```
+$ journalctl -u node-status
+
+...
+Apr 22 17:29:41 lenovo node[8275]: (8275) listening on 8000
+Apr 22 17:29:41 lenovo systemd[1]: Started Express Node.js.
+Apr 22 17:35:50 lenovo node[8275]: send some status to systemd
+...
+```
+
 [npm-image]: https://img.shields.io/npm/v/sd-notify.svg
 [npm-url]: https://npmjs.org/package/sd-notify
 [license-image]: http://img.shields.io/npm/l/sd-notify.svg

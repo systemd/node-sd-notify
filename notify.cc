@@ -1,4 +1,4 @@
-// Copyright (C) 2017, Rory Bradford <rory@dysfunctionalprogramming.com>
+// Copyright (C) 2017 - 2018, Rory Bradford <roryrjb@gmail.com> and contributors
 // MIT License
 
 #include <node.h>
@@ -57,5 +57,4 @@ void Init(v8::Local<v8::Object> exports) {
 }
 
 NODE_MODULE(addon, Init)
-
 

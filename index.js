@@ -22,6 +22,6 @@ module.exports = Object.assign({}, sdNotify, {
   },
 
   sendStatus: (text) => {
-    sdNotify.sendState('STATUS=' + text)
+    sdNotify.sendState('STATUS=' + text + '\n')
   }
 })

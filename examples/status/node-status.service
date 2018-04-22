@@ -1,0 +1,12 @@
+[Unit]
+Description=Express Node.js
+
+[Service]
+Type=simple
+ExecStart=/home/rory/.nvm/versions/node/v8.11.1/bin/node /home/rory/Projects/Personal/sd-notify/examples/status/server.js
+KillMode=process
+TimeoutStartSec=30
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
