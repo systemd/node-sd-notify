@@ -1,5 +1,5 @@
 {
-  "version": "2.3.1",
+  "version": "2.5.1",
   "scripts": {
     "test": "./node_modules/.bin/standard && ./node_modules/.bin/mocha",
     "install": "node-gyp rebuild"
@@ -14,12 +14,14 @@
   },
   "keywords": [
     "systemd",
+    "systemctl",
+    "journalctl",
     "sd_notify",
     "process",
     "watchdog",
     "forever"
   ],
-  "author": "Rory Bradford <rory@dysfunctionalprogramming.com>",
+  "author": "Rory Bradford <roryrjb@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/roryrjb/sd-notify/issues"

@@ -3,6 +3,7 @@
 
 #include <node.h>
 #include <systemd/sd-daemon.h>
+#include <systemd/sd-journal.h>
 
 #define READY "READY=1"
 #define STOPPING "STOPPING=1"
@@ -40,10 +41,17 @@ void interval(const v8::FunctionCallbackInfo<v8::Value>& args) {
   int res = sd_watchdog_enabled(0, &interval);
 
   if (res > 0) {
-      args.GetReturnValue().Set(v8::Number::New(isolate, interval / 1000));
+    args.GetReturnValue().Set(v8::Number::New(isolate, interval / 1000));
   } else {
-      args.GetReturnValue().Set(v8::Number::New(isolate, 0));
+    args.GetReturnValue().Set(v8::Number::New(isolate, 0));
   }
+}
+
+void journal_print(const v8::FunctionCallbackInfo<v8::Value>& args) {
+  int level = args[0]->NumberValue();
+  v8::String::Utf8Value str(args[1]);
+  const char *message = ToCString(str);
+  sd_journal_print(level, message);
 }
 
 }  // namespace notify
@@ -54,6 +62,7 @@ void Init(v8::Local<v8::Object> exports) {
   NODE_SET_METHOD(exports, "watchdog", notify::watchdog);
   NODE_SET_METHOD(exports, "watchdogInterval", notify::interval);
   NODE_SET_METHOD(exports, "sendState", notify::sendstate);
+  NODE_SET_METHOD(exports, "journalPrint", notify::journal_print);
 }
 
 NODE_MODULE(addon, Init)

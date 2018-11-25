@@ -2,7 +2,6 @@
 
 [![NPM version][npm-image]][npm-url]
 [![License][license-image]][license-url]
-[![Code style][standard-image]][standard-url]
 
 > Extremely minimal wrapper around [`sd_notify`](https://www.freedesktop.org/software/systemd/man/sd_notify.html)
 
@@ -147,5 +146,3 @@ Apr 22 17:35:50 lenovo node[8275]: send some status to systemd
 [npm-url]: https://npmjs.org/package/sd-notify
 [license-image]: http://img.shields.io/npm/l/sd-notify.svg
 [license-url]: LICENSE
-[standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
-[standard-url]: https://github.com/feross/standard
