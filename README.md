@@ -88,7 +88,7 @@ app.listen(PORT, () => {
 
 ...above the number supplied to the `startWatchdogMode` method is the amount of milliseconds
 we want to _ping_ `systemd`, in the example this is 200ms less than the 3 seconds set in the
-service file. Due to the event loop there is no quarantee the `setInterval` underneath will
+service file. Due to the event loop there is no guarantee the `setInterval` underneath will
 fire exactly 2800ms, this will change depending on how many functions are being called in the process,
 though this has a nice side effect, as if the process gets that busy, that blocked, `systemd` will kill it
 (and restart it with the `Restart=` config set); and in the context of having multiple processes being load
