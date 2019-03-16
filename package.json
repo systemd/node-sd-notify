@@ -35,6 +35,7 @@
     "standard": "=12.0.1"
   },
   "os": [
-    "linux"
+    "linux",
+    "darwin"
   ]
 }
