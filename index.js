@@ -15,7 +15,7 @@ const LOG_LEVELS = {
   LOG_DEBUG: 7
 }
 
-function journalPrint(...args) {
+function journalPrint (...args) {
   const level = args.shift()
   sdNotify.journalPrint(level, args.join(' '))
 }
