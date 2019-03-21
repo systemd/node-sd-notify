@@ -1,5 +1,5 @@
 {
-  "version": "2.5.1",
+  "version": "2.6.0",
   "scripts": {
     "test": "./node_modules/.bin/standard && ./node_modules/.bin/mocha",
     "install": "node-gyp rebuild"
@@ -21,7 +21,7 @@
     "watchdog",
     "forever"
   ],
-  "author": "Rory Bradford <roryrjb@gmail.com>",
+  "author": "Rory Bradford <rory@dysfunctionalprogramming.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/roryrjb/sd-notify/issues"
