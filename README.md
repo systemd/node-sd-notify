@@ -74,7 +74,7 @@ WatchdogSec=3
 
 ...and in Node, you can call the native method `.watchdog()` directly in a `setInterval` or any other mechanism
 depending on what kind of application you are developing, or you can use the helper function
-`startWatchdogMode([milliseconds])`:
+`startWatchdogMode(milliseconds)`:
 
 ```javascript
 const notify = require('sd-notify')
