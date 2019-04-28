@@ -5,6 +5,8 @@
 #include <systemd/sd-daemon.h>
 #include <systemd/sd-journal.h>
 
+using v8::Number;
+
 #define READY "READY=1"
 #define STOPPING "STOPPING=1"
 #define WATCHDOG "WATCHDOG=1"
@@ -16,12 +18,12 @@ const char* ToCString(const v8::String::Utf8Value& value) {
 }
 
 void ready(const v8::FunctionCallbackInfo<v8::Value>& args) {
-  int pid = args[0]->NumberValue();
+  int pid = args[0].As<Number>()->Value();
   sd_pid_notify(pid, 0, READY);
 }
 
 void stopping(const v8::FunctionCallbackInfo<v8::Value>& args) {
-  int pid = args[0]->NumberValue();
+  int pid = args[0].As<Number>()->Value();
   sd_pid_notify(pid, 0, STOPPING);
 }
 
@@ -30,7 +32,8 @@ void watchdog(const v8::FunctionCallbackInfo<v8::Value>& args) {
 }
 
 void sendstate(const v8::FunctionCallbackInfo<v8::Value>& args) {
-  v8::String::Utf8Value str(args[0]);
+  v8::Isolate* isolate = args.GetIsolate();
+  v8::String::Utf8Value str(isolate, args[0]);
   const char *state = ToCString(str);
   sd_notify(0, state);
 }
@@ -48,8 +51,9 @@ void interval(const v8::FunctionCallbackInfo<v8::Value>& args) {
 }
 
 void journal_print(const v8::FunctionCallbackInfo<v8::Value>& args) {
-  int level = args[0]->NumberValue();
-  v8::String::Utf8Value str(args[1]);
+  int level = args[0].As<Number>()->Value();
+  v8::Isolate* isolate = args.GetIsolate();
+  v8::String::Utf8Value str(isolate, args[1]);
   const char *message = ToCString(str);
   sd_journal_print(level, message);
 }
