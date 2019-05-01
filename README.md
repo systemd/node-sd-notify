@@ -1,14 +1,12 @@
-# sd-notify
-
-[![NPM version][npm-image]][npm-url]
-[![License][license-image]][license-url]
+# sd-notify [![Build Status](https://travis-ci.org/roryrjb/sd-notify.svg?branch=master)](https://travis-ci.org/roryrjb/sd-notify) [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard) [![NPM version](https://img.shields.io/npm/v/sd-notify.svg)](https://npmjs.org/package/sd-notify) [![License](http://img.shields.io/npm/l/sd-notify.svg)](LICENSE)
 
 > Extremely minimal wrapper around [`sd_notify`](https://www.freedesktop.org/software/systemd/man/sd_notify.html)
 
 ### Requirements
 
 * any Linux distribution that supports [__systemd__](https://en.wikipedia.org/wiki/Systemd)
-* C/C++ tool stack (GCC, etc...)
+* C/C++ tool stack (GCC/Clang, etc...)
+* Node.js >= `8.0.0`
 
 ### Installation
 
@@ -141,8 +139,3 @@ Apr 22 17:29:41 lenovo systemd[1]: Started Express Node.js.
 Apr 22 17:35:50 lenovo node[8275]: send some status to systemd
 ...
 ```
-
-[npm-image]: https://img.shields.io/npm/v/sd-notify.svg
-[npm-url]: https://npmjs.org/package/sd-notify
-[license-image]: http://img.shields.io/npm/l/sd-notify.svg
-[license-url]: LICENSE

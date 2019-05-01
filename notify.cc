@@ -1,4 +1,4 @@
-// Copyright (C) 2017 - 2018, Rory Bradford <roryrjb@gmail.com> and contributors
+// Copyright (C) 2017 - 2019, Rory Bradford <rory@dysfunctionalprogramming.com> and contributors
 // MIT License
 
 #include <node.h>
