@@ -28,11 +28,12 @@
   },
   "homepage": "https://github.com/roryrjb/sd-notify#readme",
   "dependencies": {
-    "bindings": "=1.3.0",
+    "bindings": "=1.3.0"
+  },
+  "devDependencies": {
     "mocha": "^6.1.4",
     "standard": "^12.0.1"
   },
-  "devDependencies": {},
   "os": [
     "linux",
     "darwin"
