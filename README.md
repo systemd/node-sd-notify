@@ -1,4 +1,4 @@
-# sd-notify [![Build Status](https://travis-ci.org/roryrjb/sd-notify.svg?branch=master)](https://travis-ci.org/roryrjb/sd-notify) [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard) [![NPM version](https://img.shields.io/npm/v/sd-notify.svg)](https://npmjs.org/package/sd-notify) [![License](http://img.shields.io/npm/l/sd-notify.svg)](LICENSE)
+# sd-notify [![Build Status](https://travis-ci.org/systemd/node-sd-notify.svg?branch=master)](https://travis-ci.org/systemd/node-sd-notify) [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard) [![NPM version](https://img.shields.io/npm/v/sd-notify.svg)](https://npmjs.org/package/sd-notify) [![License](http://img.shields.io/npm/l/sd-notify.svg)](LICENSE)
 
 > Extremely minimal wrapper around [`sd_notify`](https://www.freedesktop.org/software/systemd/man/sd_notify.html)
 
