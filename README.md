@@ -111,8 +111,7 @@ app.listen(PORT, () => {
 })
 ```
 
-...this way the Node process will behaviour in the correct manner in either
-situation.
+...this way the Node process will behave in the correct manner in either situation.
 
 __Status:__
 
