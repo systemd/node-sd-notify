@@ -52,6 +52,10 @@ module.exports = Object.assign({}, sdNotify, {
     }
   },
 
+  watchdogKeepAlive: () => {
+    sdNotify.watchdog()
+  },
+
   sendStatus: (text) => {
     sdNotify.sendState('STATUS=' + text + '\n')
   },

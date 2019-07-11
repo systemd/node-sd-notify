@@ -113,6 +113,26 @@ app.listen(PORT, () => {
 
 ...this way the Node process will behave in the correct manner in either situation.
 
+__Manual keep alive:__
+```javasript
+
+app.listen(PORT, () => {
+  console.log('listening on port ' + PORT)
+  notify.ready()
+
+  const watchdogInterval = notify.watchdogInterval()
+
+  if (watchdogInterval > 0) {
+    const interval = Math.floor(watchdogInterval / 2)
+    const intervalId = setInterval(() => {
+      if(!isDeadlockDetected()) {
+        notify.watchdogKeepAlive()
+      }
+    }, interval)
+  }
+})
+```
+
 __Status:__
 
 You can also send some status string to __systemd__, which will append to the service's log.
