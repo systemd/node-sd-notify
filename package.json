@@ -10,7 +10,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/roryrjb/sd-notify.git"
+    "url": "git+https://github.com/systemd/node-sd-notify.git"
   },
   "keywords": [
     "systemd",
@@ -24,9 +24,9 @@
   "author": "Rory Bradford <rory@dysfunctionalprogramming.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/roryrjb/sd-notify/issues"
+    "url": "https://github.com/systemd/node-sd-notify/issues"
   },
-  "homepage": "https://github.com/roryrjb/sd-notify#readme",
+  "homepage": "https://github.com/systemd/node-sd-notify#readme",
   "dependencies": {
     "bindings": "1.5.0"
   },
