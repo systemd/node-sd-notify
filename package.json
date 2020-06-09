@@ -5,7 +5,7 @@
     "install": "node-gyp rebuild"
   },
   "gypfile": true,
-  "name": "sd-notify",
+  "name": "@connectedcars/sd-notify",
   "description": "wrapper around sd_notify for using systemd as a node process manager",
   "main": "index.js",
   "repository": {
